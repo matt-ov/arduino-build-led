@@ -1,0 +1,42 @@
+﻿<Window x:Class="ArduinoBuildLED.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ArduinoBuildLED" Height="300" Width="633" ResizeMode="CanMinimize" Closing="OnClose" StateChanged="OnStateChanged" IsVisibleChanged="OnIsVisibleChanged" Icon="/ArduinoBuildLED;component/timemachine.ico" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TabControl Margin="12,12,12,36" Name="tabControl1">
+            <TabItem Header="General Settings" Name="tabGeneralSettings">
+                <Grid>
+                    <TextBox Height="26" Margin="81,8,0,0" Name="txtPortName" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" FontSize="14">COM3</TextBox>
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label1" VerticalAlignment="Top" Width="79">COM Port</Label>
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,40,0,0" Name="label2" VerticalAlignment="Top" Width="79">Baud Rate</Label>
+                    <TextBox Height="28" Margin="81,40,0,0" Name="txtBaudRate" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" FontSize="14">9600</TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TFS Settings" Name="tabTFS">
+                <Grid>
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,10.96,0,0" Name="label3" VerticalAlignment="Top" Width="120">TFS Server</Label>
+                    <TextBox Margin="121,10.96,0,0" Name="txtTFSServer" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" FontSize="14">ITDRENMVP560</TextBox>
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,45,0,0" Name="label4" VerticalAlignment="Top" Width="120">TFS Project</Label>
+                    <Label HorizontalAlignment="Left" Margin="6,79,0,76" Name="label5" Width="120">Build to Monitor</Label>
+                    <TextBox Height="28" HorizontalAlignment="Left" Margin="121,45,0,0" Name="txtTFSProject" VerticalAlignment="Top" Width="120" FontSize="14">EZTrac</TextBox>
+                    <TextBox HorizontalAlignment="Left" Margin="121,79,0,75" Name="txtTFSBuildToMonitor" Width="120" FontSize="14">Check-In Build</TextBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Debug" Name="tabDebug">
+                <Grid>
+                    <Button Height="23" HorizontalAlignment="Left" Margin="6,6,0,0" Name="btnTurnRedOn" VerticalAlignment="Top" Width="144" Click="btnToggleRed_Click" IsEnabled="False">Toggle Red LED</Button>
+                    <Button Height="23" HorizontalAlignment="Left" Margin="6,35,0,0" Name="btnTurnGreenOn" VerticalAlignment="Top" Width="144" Click="btnToggleGreen_Click" IsEnabled="False">Toggle Green LED</Button>
+                    <Button Height="23" HorizontalAlignment="Left" Margin="6,64,0,0" Name="btnTurnBlueOn" VerticalAlignment="Top" Width="144" Click="btnToggleBlue_Click" IsEnabled="False">Toggle Blue LED</Button>
+                    <Button Margin="6,93,0,0" Name="btnTurnAllOff" Click="btnTurnAllOff_Click" VerticalAlignment="Top" Height="21.96" HorizontalAlignment="Left" Width="144" IsEnabled="False">Turn Off All LED</Button>
+                    <Slider Height="22" Margin="156,7,6,0" Name="sliderRed" VerticalAlignment="Top" Maximum="255" Minimum="2" ValueChanged="sliderRed_ValueChanged" />
+                    <Slider Height="22" Margin="156,35,6,0" Name="sliderGreen" VerticalAlignment="Top" Maximum="255" Minimum="2" ValueChanged="sliderGreen_ValueChanged" />
+                    <Slider Height="22" Margin="156,63,6,0" Name="sliderBlue" VerticalAlignment="Top" Maximum="255" Minimum="2" ValueChanged="sliderBlue_ValueChanged" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button Height="23" Margin="404,0,93,7" Name="btnSaveSettings" VerticalAlignment="Bottom">Save Settings</Button>
+        <Button Height="23" HorizontalAlignment="Right" Margin="0,0,12,7" Name="btnExit" VerticalAlignment="Bottom" Width="75" Click="btnExit_Click">Exit</Button>
+        <Button HorizontalAlignment="Left" Margin="12,0,0,7" Name="btnConnectArduino" Width="120" Height="23.04" VerticalAlignment="Bottom" Click="btnConnectArduino_Click">Connect to Arduino</Button>
+        <Button Height="23.04" HorizontalAlignment="Left" Margin="138,0,0,7" Name="btnConnectTFS" VerticalAlignment="Bottom" Width="120" Click="btnConnectTFS_Click">Connect to TFS</Button>
+    </Grid>
+</Window>
