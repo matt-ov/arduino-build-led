@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="ArduinoLED" default="build" basedir=".">
+<project name="ArduinoBuildLED" default="build" basedir=".">
 
   <property name="MSBuildPath" value="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe"/>
   <property name="SolutionFile" value="ArduinoBuildLED.sln" />
