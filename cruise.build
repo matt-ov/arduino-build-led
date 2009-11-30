@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<project name="ArduinoLED" default="build" basedir=".">
+
+  <property name="MSBuildPath" value="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe"/>
+  <property name="SolutionFile" value="ArduinoBuildLED.sln" />
+
+  <description>The Hello World of build files.</description>
+  <!--<property name="debug" value="true" overwrite="false" />
+    <target name="clean" description="remove all generated files">
+        <delete file="HelloWorld.exe" failonerror="false" />
+        <delete file="HelloWorld.pdb" failonerror="false" />
+    </target>-->
+  <target name="compile" description="Compiles using the AutomatedDebug Configuration">
+    <exec program="${MSBuildPath}">
+      <arg line='"${SolutionFile}"' />
+      <!--<arg line="/property:Configuration=${SolutionConfiguration}" />-->
+      <arg value="/target:Rebuild" />
+      <arg value="/verbosity:normal" />
+      <arg value="/nologo" />
+      <!--<arg value="/p:OutputPath=C:\Documents and Settings\Administrator\Desktop\FarmServer\Bayesian\Artifacts\" />-->
+      <!--<arg line='/logger:"C:\Documents and Settings\Administrator\Desktop\FarmServer\ThoughtWorks.CruiseControl.MsBuild.dll"'/>-->
+    </exec>
+  </target>
+
+  <!--<target name="ncover" depends="compile">
+    <exec
+        program="C:\Documents and Settings\Administrator\Desktop\FarmServer"
+        workingdir="build\unittests"
+        commandline="/c &quot;..\..\tools\nunit\nunit-console.exe MyUnitTests.dll /xml:../MyUnitTests.dll-results.xml /nologo&quot;"/>
+  </target>-->
+</project>
