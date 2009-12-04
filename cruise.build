@@ -22,6 +22,15 @@
     </exec>
   </target>
 
+  <target name="test" description="runs the unit and acceptance tests">
+    <!-- Unit Test Assembly -->
+    <!--<exec program="${nunit-console.exe}">-->
+    <exec program="C:\Users\d2viant\Downloads\NUnit-2.5.2.9222\NUnit-2.5.2.9222\bin\net-2.0\nunit-console.exe">
+      <arg value="ArduinoBuildLED.Tests.dll" />
+      <arg value="/xml=ArduinoBuildLED.Tests-Results.xml" />
+    </exec>
+  </target>
+
   <!--<target name="ncover" depends="compile">
     <exec
         program="C:\Documents and Settings\Administrator\Desktop\FarmServer"
