@@ -31,6 +31,10 @@
     </exec>
   </target>
 
+  <target name="start" depends="test">
+    
+  </target>
+
   <!--<target name="ncover" depends="compile">
     <exec
         program="C:\Documents and Settings\Administrator\Desktop\FarmServer"
