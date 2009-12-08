@@ -3,6 +3,7 @@
 
   <property name="MSBuildPath" value="C:\WINDOWS\Microsoft.NET\Framework\v3.5\MSBuild.exe"/>
   <property name="SolutionFile" value="ArduinoBuildLED.sln" />
+  <property name="BaseDir" value="${project::get-base-directory()}" />
 
   <description>The Hello World of build files.</description>
   <!--<property name="debug" value="true" overwrite="false" />
@@ -27,7 +28,7 @@
     <!--<exec program="${nunit-console.exe}">-->
     <exec program="C:\Users\d2viant\Downloads\NUnit-2.5.2.9222\NUnit-2.5.2.9222\bin\net-2.0\nunit-console.exe">
       <arg value="ArduinoBuildLED.Tests\bin\debug\ArduinoBuildLED.Tests.dll" />
-      <arg value="/xml=ArduinoBuildLED.Tests-Results.xml" />
+      <arg value="/xml=${BaseDir}\ArduinoBuildLED.Tests-Results.xml" />
     </exec>
   </target>
 
