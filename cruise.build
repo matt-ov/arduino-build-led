@@ -28,7 +28,7 @@
     <!--<exec program="${nunit-console.exe}">-->
     <exec program="C:\Users\d2viant\Downloads\NUnit-2.5.2.9222\NUnit-2.5.2.9222\bin\net-2.0\nunit-console.exe">
       <arg value="ArduinoBuildLED.Tests\bin\debug\ArduinoBuildLED.Tests.dll" />
-      <arg value="/xml=${BaseDir}\test-results.xml" />
+      <arg value="/xml=${BaseDir}\nunit.xml" />
     </exec>
     <exec program="C:\Users\d2viant\Downloads\NDepend_2_12_1_3122\NDepend.Console.exe">
       <arg value="${BaseDir}\ndepend.xml" />
