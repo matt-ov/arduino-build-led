@@ -30,13 +30,16 @@
       <arg value="ArduinoBuildLED.Tests\bin\debug\ArduinoBuildLED.Tests.dll" />
       <arg value="/xml=${BaseDir}\nunit.xml" />
     </exec>
+  </target>
+
+  <target name="ndepend" depends="test">
     <exec program="C:\Users\d2viant\Downloads\NDepend_2_12_1_3122\NDepend.Console.exe">
       <arg value="${BaseDir}\ndepend.xml" />
       <arg value="/Silent" />
     </exec>
   </target>
 
-  <target name="start" depends="test">
+  <target name="start" depends="ndepend">
     
   </target>
 
